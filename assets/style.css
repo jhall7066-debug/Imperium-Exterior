@@ -102,7 +102,7 @@ p { margin: 0 0 1em; }
 .seal-text { position: relative; display: flex; flex-direction: column; align-items: center; font-family: var(--display); font-weight: 800; text-transform: uppercase; line-height: .86; text-align: center; }
 .seal-free { font-size: clamp(3.6rem, 6vw, 4.6rem); letter-spacing: .01em; }
 .seal-what { font-size: clamp(1.25rem, 2vw, 1.55rem); letter-spacing: .04em; }
-.seal-sub { font-family: var(--body); font-weight: 800; font-size: .68rem; letter-spacing: .14em; margin-top: .55em; }
+.seal-sub { font-family: var(--body); font-weight: 800; font-size: .68rem; letter-spacing: .14em; margin-top: .55em; max-width: 13em; line-height: 1.25; }
 .seal-cta { position: absolute; bottom: -4%; left: 50%; transform: translateX(-50%) rotate(8deg); white-space: nowrap; background: var(--onyx); color: var(--gold); font-weight: 800; font-size: .8rem; letter-spacing: .07em; text-transform: uppercase; padding: .6em 1.05em; border-radius: 999px; box-shadow: 0 6px 16px rgba(0,0,0,.35); transition: background .15s, color .15s; }
 .hero-seal:hover .seal-cta { background: #fff; color: var(--onyx); }
 .hero-seal:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; border-radius: 50%; }
@@ -339,7 +339,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .logo-word { font-size: 1.35rem; }
   .hero { min-height: 0; }
   .hero-content { padding: 3.2rem 0 3rem; }
-  .hero-seal { display: none; }
+  .hero .eyebrow { font-size: .68rem; letter-spacing: .1em; }
+  .hero-seal { --s: min(112px, 28vw); position: absolute; right: -4px; top: 7.6rem; width: var(--s); margin: 0; filter: drop-shadow(0 10px 18px rgba(0,0,0,.5)); }
+  .seal-free { font-size: calc(var(--s) * .29); }
+  .seal-what { font-size: calc(var(--s) * .094); letter-spacing: .02em; }
+  .seal-sub, .seal-cta { display: none; }
   .hero-ctas .btn { flex: 1 1 100%; }
   .trust-grid, .svc-grid, .pairs, .side-by-side, .svc-cols { grid-template-columns: 1fr; }
   .weather-icons { grid-template-columns: 1fr 1fr; gap: 1.4rem; }
